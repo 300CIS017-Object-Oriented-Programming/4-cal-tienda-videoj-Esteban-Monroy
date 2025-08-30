@@ -25,7 +25,7 @@ extern const string CATEGORIAS_JUEGOS[MAX_JUEGOS_CATALOGO];
 extern const string PLATAFORMAS_JUEGOS[MAX_JUEGOS_CATALOGO];
 extern const double PRECIOS_JUEGOS[MAX_JUEGOS_CATALOGO];
 
-// --- Prototipos de funciones ---
+// --- Prototipos de funciones para generar la numeracion de juegos ---
 void mostrarCatalogoJuegos();
 int leerCodigoJuego();
 int leerCantidadJuegos();

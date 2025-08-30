@@ -22,10 +22,10 @@ const string PLATAFORMAS_JUEGOS[MAX_JUEGOS_CATALOGO] = {
 };
 const double PRECIOS_JUEGOS[MAX_JUEGOS_CATALOGO] = {59.99, 69.99, 49.99, 59.99, 39.99, 49.99, 69.99, 69.99, 59.99, 29.99, 29.99, 29.99};
 
-// --- Implementaciones de funciones ---
+// --- Implementaciones funciones  ---
 
 /**
- * @brief Muestra el catálogo completo de juegos disponibles.
+ * @brief para mostrar el catalogo de juegos haciendo reparticion .
  */
 void mostrarCatalogoJuegos() {
     cout << "\n--- Catalogo de Videojuegos ---" << endl;
@@ -38,8 +38,8 @@ void mostrarCatalogoJuegos() {
 }
 
 /**
- * @brief Lee y valida el código de un juego.
- * @return El código del juego ingresado.
+ * @brief Lee y valida para hacer comprobacion.
+ * @return retorna al codigo de juego.
  */
 int leerCodigoJuego() {
     int codigo;
@@ -77,7 +77,7 @@ int leerCantidadJuegos() {
 }
 
 /**
- * @brief Obtiene el nombre de un juego a partir de su código.
+ * @brief Obtiene el nombre de el juego a partir de su código.
  * @param codigoJuego El código del juego.
  * @return El nombre del juego.
  */
@@ -119,9 +119,9 @@ string obtenerPlataforma(int codigoJuego) {
 }
 
 /**
- * @brief Obtiene la categoría de un juego a partir de su código.
- * @param codigoJuego El código del juego.
- * @return La categoría del juego.
+    * @brief Obtiene la categoría de un juego a partir de su código.
+    *@param codigoJuego El código del juego.
+    * @return La categoría del juego.
  */
 string obtenerCategoria(int codigoJuego) {
     for (int i = 0; i < MAX_JUEGOS_CATALOGO; ++i) {
@@ -133,10 +133,10 @@ string obtenerCategoria(int codigoJuego) {
 }
 
 /**
- * @brief Agrega un juego al carrito de compras, actualizando la cantidad si ya existe.
- * @param codigos[] El arreglo de códigos de juegos en el carrito.
- * @param cantidades[] El arreglo de cantidades en el carrito.
- * @param cantidadJuegosRegistrados La cantidad actual de juegos únicos en el carrito.
+    * @brief Agrega un juego al carrito de compras, actualizando la cantidad si ya existe.
+    * @param codigos[] El arreglo de códigos de juegos en el carrito.
+    * @param cantidades[] El arreglo de cantidades en el carrito.
+    * @param cantidadJuegosRegistrados La cantidad actual de juegos únicos en el carrito.
  */
 void agregarJuegoAlCarrito(int codigos[], int cantidades[], int& cantidadJuegosRegistrados) {
     if (cantidadJuegosRegistrados >= MAX_ARTICULOS_CARRITO) {
@@ -165,11 +165,11 @@ void agregarJuegoAlCarrito(int codigos[], int cantidades[], int& cantidadJuegosR
 }
 
 /**
- * @brief Calcula el subtotal del carrito sin descuentos.
- * @param codigos[] El arreglo de códigos de juegos en el carrito.
- * @param cantidades[] El arreglo de cantidades en el carrito.
- * @param cantidadJuegosRegistrados La cantidad de juegos únicos en el carrito.
- * @return El subtotal de la compra.
+    * @brief Calcula el subtotal del carrito sin descuentos.
+    * @param codigos[] El arreglo de códigos de juegos en el carrito.
+    * @param cantidades[] El arreglo de cantidades en el carrito.
+    * @param cantidadJuegosRegistrados La cantidad de juegos únicos en el carrito.
+    * @return El subtotal de la compra.
  */
 double calcularSubtotalCarrito(const int codigos[], const int cantidades[], int cantidadJuegosRegistrados) {
     double subtotal = 0.0;
@@ -180,8 +180,8 @@ double calcularSubtotalCarrito(const int codigos[], const int cantidades[], int 
 }
 
 /**
- * @brief Lee y valida el tipo de cliente.
- * @return El tipo de cliente seleccionado.
+    * @brief Lee y valida el tipo de cliente.
+    * @return El tipo de cliente seleccionado.
  */
 int leerTipoCliente() {
     int tipoCliente;
@@ -200,10 +200,10 @@ int leerTipoCliente() {
 }
 
 /**
- * @brief Obtiene el porcentaje de descuento según el tipo de cliente.
- * @param tipoCliente El tipo de cliente.
- * @return El porcentaje de descuento.
- */
+    * @brief Obtiene el porcentaje de descuento según el tipo de cliente.
+    * @param tipoCliente El tipo de cliente.
+    * @return El porcentaje de descuento.
+    */
 double obtenerPorcentajeDescuento(int tipoCliente) {
     switch (tipoCliente) {
         case 1:
@@ -218,11 +218,11 @@ double obtenerPorcentajeDescuento(int tipoCliente) {
 }
 
 /**
- * @brief Calcula los descuentos adicionales basados en plataformas y categorías específicas.
- * @param codigos[] El arreglo de códigos de juegos.
- * @param cantidades[] El arreglo de cantidades.
- * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito.
- * @return El monto total de descuentos adicionales.
+    * @brief Calcula los descuentos adicionales basados en plataformas y categorías específicas.
+    * @param codigos[] El arreglo de códigos de juegos.
+    * @param cantidades[] El arreglo de cantidades.
+    * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito.
+    * @return El monto total de descuentos adicionales.
  */
 double calcularDescuentosAdicionales(const int codigos[], const int cantidades[], int cantidadJuegosRegistrados) {
     double descuentosAdicionales = 0.0;
@@ -240,11 +240,11 @@ double calcularDescuentosAdicionales(const int codigos[], const int cantidades[]
 }
 
 /**
- * @brief Calcula el total final de la compra con todos los descuentos aplicados.
- * @param subtotal El subtotal de la compra.
- * @param porcentajeDescuento El porcentaje de descuento del cliente.
- * @param descuentosAdicionales El monto de los descuentos adicionales.
- * @return El total final a pagar.
+    * @brief Calcula el total final de la compra con todos los descuentos aplicados.
+    * @param subtotal El subtotal de la compra.
+    * @param porcentajeDescuento El porcentaje de descuento del cliente.
+    * @param descuentosAdicionales El monto de los descuentos adicionales.
+    * @return El total final a pagar.
  */
 double calcularTotalFinal(double subtotal, double porcentajeDescuento, double descuentosAdicionales) {
     double total = subtotal - (subtotal * porcentajeDescuento) - descuentosAdicionales;
@@ -252,11 +252,11 @@ double calcularTotalFinal(double subtotal, double porcentajeDescuento, double de
 }
 
 /**
- * @brief Muestra un resumen detallado de la compra, incluyendo subtotales y descuentos.
- * @param codigos[] El arreglo de códigos de juegos.
- * @param cantidades[] El arreglo de cantidades.
- * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito.
- * @param porcentajeDescuento El porcentaje de descuento del cliente.
+    * @brief Muestra un resumen detallado de la compra, incluyendo subtotales y descuentos.
+    * @param codigos[] El arreglo de códigos de juegos.
+    * @param cantidades[] El arreglo de cantidades.
+    * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito.
+    * @param porcentajeDescuento El porcentaje de descuento del cliente.
  */
 void mostrarResumenCompra(const int codigos[], const int cantidades[], int cantidadJuegosRegistrados, double porcentajeDescuento) {
     double subtotal = calcularSubtotalCarrito(codigos, cantidades, cantidadJuegosRegistrados);
@@ -282,10 +282,10 @@ void mostrarResumenCompra(const int codigos[], const int cantidades[], int canti
 }
 
 /**
- * @brief Carga una compra de demostración en el carrito.
- * @param codigos[] El arreglo de códigos de juegos.
- * @param cantidades[] El arreglo de cantidades.
- * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito (se reinicia).
+    * @brief Carga una compra de demostración en el carrito.
+    * @param codigos[] El arreglo de códigos de juegos.
+    * @param cantidades[] El arreglo de cantidades.
+    * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito (se reinicia).
  */
 void cargarCompraDemo(int codigos[], int cantidades[], int& cantidadJuegosRegistrados) {
     limpiarCarrito(codigos, cantidades, cantidadJuegosRegistrados);
@@ -297,10 +297,10 @@ void cargarCompraDemo(int codigos[], int cantidades[], int& cantidadJuegosRegist
 }
 
 /**
- * @brief Limpia el carrito de compras.
- * @param codigos[] El arreglo de códigos de juegos.
- * @param cantidades[] El arreglo de cantidades.
- * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito (se reinicia a cero).
+    * @brief Limpia el carrito de compras.
+    * @param codigos[] El arreglo de códigos de juegos.
+    * @param cantidades[] El arreglo de cantidades.
+    * @param cantidadJuegosRegistrados La cantidad de juegos en el carrito (se reinicia a cero).
  */
 void limpiarCarrito(int codigos[], int cantidades[], int& cantidadJuegosRegistrados) {
     cantidadJuegosRegistrados = 0;
